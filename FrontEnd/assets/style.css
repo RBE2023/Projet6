@@ -94,10 +94,20 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
+li a {
+	text-decoration: none;
+}
 
 li:hover {
 	color: #B1663C;
 }
+
+.filtres { 
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
