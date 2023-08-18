@@ -25,35 +25,64 @@
 //         }
 //     });
 
-// 4 en fonction du retour si les idenfiaints sont incorrect : faire une action : message d'erreur - mettre une alert "vos identifiants sont incorrects"
+// 4 en fonction du retour si les idenfiants sont incorrect : faire une action : message d'erreur - mettre une alert "vos identifiants sont incorrects"
 // 5 si les éléments sont corrects, faire une autre action :
 // a) créer un Token et l'enregistrer dans la session;
 // b) rediriger vers la page d'accueil;
 
 // fonction connect
-function connect(event) {
-  event.preventDefault();
+// function connect(event) {
+//   event.preventDefault();
+//   const logInput = {
+//     formEmail: document.getElementById("mail").value,
+//     formPassword: document.getElementById("mdp").value,
+//   };
+//   console.log(logInput);
+//   const identify = JSON.stringify(logInput);
+//   fetch("http://localhost:5678/api/users/login", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: identify,
+//   })
+//     .then((resp) => resp.json())
+//     .then((logs) => {
+//       if (!logs.token) {
+//         alert("identifiant ou mot de passe incorrecte");
+//         return;
+//       }
+//       const key = JSON.stringify(logs.token);
+//       window.localStorage.setItem("key", key);
+//       window.location = "./index.html";
+//     })
+// };
+// const formLogin = document.getElementById("formLogin")
+// formLogin.addEventListener("submit", (event)=> connect(event))
+
+
+function connect(event){
+  event.preventDefault(); 
   const logInput = {
-    formEmail: document.getElementById("mail").value,
-    formPassword: document.getElementById("mdp").value,
+      email : document.querySelector('#mail').value,
+      password : document.querySelector('#mdp').value
   };
   console.log(logInput);
-  const identify = JSON.stringify(logInput);
+  const storeId = JSON.stringify(logInput);
   fetch("http://localhost:5678/api/users/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: identify
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: storeId
   })
-    .then((resp) => resp.json())
-    .then((logs) => {
-      if (!logs.token) {
-        alert("identifiant ou mot de passe incorrecte");
-        return;
+  .then (resp => resp.json())
+  .then ((response) => {
+      if (!response.token) { 
+          alert("Identifiant ou mot de passe incorrect"); 
+          return;
       }
-      const key = JSON.stringify(logs.token);
-      window.localStorage.setItem("key", key);
-      window.location = "./index.html";
-    });
-}
-const formLogin = document.getElementById("formLogin");
-formLogin.addEventListener("submit", connect);
+
+      const token = JSON.stringify(response.token);
+      window.localStorage.setItem("token", token);
+      window.location = "./index.html"; 
+  })
+}; 
+const formLogin = document.getElementById("formLogin")
+formLogin.addEventListener("submit", (event)=> connect(event))

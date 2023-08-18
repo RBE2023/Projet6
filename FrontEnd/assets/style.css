@@ -55,8 +55,22 @@ body {
 }
 header {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	/* justify-content: space-between; */
 	margin: 50px 0
+}
+.banner {
+	height: 59px;
+background-color: black;
+color: white;
+display: flex;
+justify-content: center;
+
+}
+.mainHeader {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 section {
 	margin: 50px 0
@@ -196,3 +210,102 @@ footer nav ul {
 	margin: 2em
 }
 
+.modifier {
+	text-decoration: none;
+	color: black;
+	margin-top: 10px;
+}
+
+.projet {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 20px;
+}
+.fa-regular {
+	padding-right: 3px;
+} 
+
+.filtre {
+	height: 37px;
+	top: 812px;
+	left: 427px;
+	border-radius: 60px;
+	border: 2px #1D6154 solid;
+	background-color: white;
+	font-weight: bold;	
+	color : #1D6154;
+	padding: 10px;	
+	font-family: 'Syne';
+}
+.filtre:focus{
+	background-color: #1D6154;
+	color:white;
+}
+
+.filtres {
+	margin-bottom: 40px;
+}
+
+#modale {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(141, 141, 141, 0.4);	
+}
+
+.modalContent {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 70%;
+    max-height: 80%;
+    border-radius: 14px;
+    position: relative;
+}
+.buttonAjouter{
+	height: 37px;
+	top: 812px;
+	left: 427px;
+	border-radius: 60px;
+	border: 2px #1D6154 solid;
+	background-color: #1D6154;
+	font-weight: bold;	
+	color : white;
+	padding: 10px;	
+	font-family: 'Syne';
+}
+
+
+#galleryModale {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 70%;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+#galleryModale figure {
+	width: 30px;
+	height: ;
+	display: flex;
+	flex-direction: column;
+}
+.closeModale {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
