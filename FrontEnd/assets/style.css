@@ -61,10 +61,11 @@ header {
 }
 .banner {
 	height: 59px;
-background-color: black;
-color: white;
-display: flex;
-justify-content: center;
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
 .mainHeader {
@@ -96,14 +97,14 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color:#1D6154;
 }
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -223,7 +224,7 @@ footer nav ul {
 	gap: 20px;
 }
 .fa-regular {
-	padding-right: 3px;
+	padding-right: 5px;
 } 
 
 .filtre {
@@ -275,6 +276,7 @@ footer nav ul {
     border-radius: 14px;
     position: relative;
 }
+
 .buttonAjouter{
 	height: 37px;
 	top: 812px;
@@ -286,8 +288,7 @@ footer nav ul {
 	color : white;
 	padding: 10px;	
 	font-family: 'Syne';
-}
-
+	}
 
 #galleryModale {
 	display: flex;
@@ -296,16 +297,100 @@ footer nav ul {
 	width: 70%;
 	gap: 15px;
 	flex-wrap: wrap;
+	margin-bottom: 40px;
 }
 
 #galleryModale figure {
-	width: 30px;
+	/* width: 30px; */
 	height: ;
 	display: flex;
 	flex-direction: column;
+	width: 76.86280059814453px;
+height: 102.56774139404297px;
+top: 796px;
+/* left: 510px; */
+
 }
 .closeModale {
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+.column {
+	flex-direction: column;
+	display: flex;	
+	align-items: center;
+}
+
+.modalAjout {
+	display: none;
+}
+
+.headerBouton {
+	height: 37px;
+	top: 812px;
+	left: 427px;
+	border-radius: 60px;
+	border: 2px #A7A7A7 solid;
+	background-color: white;
+	font-weight: bold;
+	color: black;
+	padding: 10px;
+	font-family: 'Syne';
+	margin-left: 15px;
+}
+
+.titreModal {
+	margin-bottom: 30px;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color:black;
+}
+.fa-image {
+	font-size: 100px;
+	margin-top: 10px;
+}
+
+.cadreAjoutPhoto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 30px;
+	width: 420px;
+    height: 180px;
+    background-color: #E8F1F6;
+}
+
+.bouton2Ajout {
+	height: 37px;
+	width: 173px;
+	border-radius: 60px;
+	border: 2px #A7A7A7 solid;
+	background-color: #B3B3B3;
+	color: #306685;
+	padding: 10px;
+	font-family: 'Syne';
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.bouton3Valider {
+	height: 37px;
+	width: 237px;
+	border-radius: 60px;
+	border: 2px #A7A7A7 solid;
+	background-color: #B3B3B3;
+	color: white;
+	padding: 10px;
+	font-family: 'Syne';
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+
+input {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }

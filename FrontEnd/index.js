@@ -127,9 +127,13 @@ cross.forEach((a) => {
 const stopPropagation = function (e) { 
     e.stopPropagation(); 
   };
-  const modalcont = document.querySelector(".modalContent");
-  modalcont.addEventListener("click", stopPropagation); 
+  const modales = document.querySelectorAll(".modalContent");
+  console.log(modales);
+  modales.forEach((modale)=>{
+  modale.addEventListener("click", stopPropagation); 
 
+  })
+  
 
 
   // fonction closeModale (comme pour la fonction openModale)  // inverser ls propriétés

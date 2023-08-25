@@ -1,7 +1,3 @@
-// fonction qui affiche la galerie
-
-// fontion qui affiche les images
-
 // Affiche une image
 function showModaleWork(url, title, id) {
   console.log("test showimage");
@@ -20,17 +16,22 @@ function showModaleWork(url, title, id) {
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
 
-  // deleteButton.addEventListener("click", deleteWorks(id));
+  deleteButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    deleteWorks(id, JSON.parse(localStorage.getItem("token")));
+  });
 }
-function deleteWorks(idWorks) {
+
+function deleteWorks(idWorks, token) {
   console.log("test delete");
   fetch("http://localhost:5678/api/works/" + idWorks, {
     method: "DELETE",
-    headers: { "Content-Type": "application/json" },
+    headers: { Authorization: `Bearer ${token}` },
   })
     .then((resp) => resp.json())
-    .then((response) => {
-      alert("travail supprimé" + idWorks);
+    .then(() => {
+      // alert("travail supprimé" + idWorks);
+      showModaleGalerie();
     });
 }
 
@@ -53,10 +54,29 @@ async function showModaleGalerie(categoryId = 0) {
       showModaleWork(work.imageUrl, work.title, work.id);
     }
   });
-  // .then(datas => {
-  //    datas.forEach ((data) => {
-  //     showImage(data.imageUrl, data.title);
-  //    })
 }
 
 showModaleGalerie();
+
+// Ajout de photo
+
+const ajoutPhoto = document.getElementById("buttonAjouter");
+const modalGallery = document.querySelector(".modalGallery");
+const modalAjout= document.querySelector(".modalAjout");
+const arrowLeft = document.querySelector(".fa-arrow-left");
+ajoutPhoto.addEventListener("click", (event) => {
+  console.log("test3");
+  console.log(modalAjout);
+  console.log(modalGallery);
+modalAjout.style.display="block"
+modalGallery.style.display="none"
+
+});
+
+console.log(arrowLeft);
+arrowLeft.addEventListener("click",(event) => {
+  console.log("flèche cliqué")
+  modalAjout.style.display="none";
+  modalGallery.style.display="flex";
+
+} );

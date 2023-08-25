@@ -27,8 +27,9 @@
   <body>
     <header>
       <div class="banner admin">
+        <i class="fa-regular fa-pen-to-square" style="color: white"></i>
         <p>mode édition</p>
-        <button>publier les changements</button>
+        <button class="headerBouton">publier les changements</button>
       </div>
       <div class="mainHeader">
         <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -72,7 +73,8 @@
           <h2>Mes Projets</h2>
           <a class="admin modifier" href="#modale">
             <i class="fa-regular fa-pen-to-square" style="color: #040506"></i
-            >modifier</a>
+            >modifier</a
+          >
           <!-- bouton modifier avec la classe admin afin de "display none" pour interface utilisateur -->
         </div>
 
@@ -94,16 +96,43 @@
           <input type="submit" value="Envoyer" />
         </form>
       </section>
-      <section id="modale" class="modale closeModale" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModale" style="display: none;">
-          <div class="modalContent">
-          <h2>Galerie photo</h2>
+      <!-- ici je vais créer ma modale1, fond opaque ; container pour la modale ;  -->
+      <section
+        id="modale"
+        class="modale closeModale"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="false"
+        aria-labelledby="titleModale"
+        style="display: none"
+      >
+        <div class="modalContent modalGallery">
+          <h2 class="titreModal">Galerie photo</h2>
           <div id="galleryModale"></div>
-          <button class="buttonAjouter" id="buttonAjouter">Ajouter une photo</button>
+          <button class="buttonAjouter" id="buttonAjouter">
+            Ajouter une photo
+          </button>
           <button class="closeModale">&times</button>
         </div>
-        <div class="modalcontent2"></div>
+        <div class="modalContent modalAjout">
+          <i class="fa-solid fa-arrow-left"></i>
+          <form class="column">
+            <h2 class="titreModal">Ajout Photo</h2>
+            <div class="cadreAjoutPhoto" id="cadreAjoutPhoto">
+              <i class="fa-regular fa-image"></i>
+              <button class="bouton2Ajout">+ Ajouter photo</button>
+            </div>
+
+            <label for="">Titre</label>
+            <input type="text" />
+            <label for="">Catégorie</label>
+            <input type="text" />
+
+            <button class="bouton3Valider">Valider</button>
+            <button class="closeModale">&times</button>
+          </form>
+        </div>
       </section>
-      <!-- ici je vais créer ma modale, fond opaque ; container pour la modale ;  -->
     </main>
 
     <footer>
